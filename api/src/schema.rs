@@ -1,6 +1,6 @@
 table! {
     book (isbn) {
-        isbn -> Nullable<Text>,
+        isbn -> Text,
         title -> Text,
         author -> Text,
     }
