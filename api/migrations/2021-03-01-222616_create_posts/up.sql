@@ -1,0 +1,5 @@
+CREATE TABLE book (
+  isbn VARCHAR PRIMARY KEY,
+  title VARCHAR NOT NULL,
+  author VARCHAR NOT NULL
+)
