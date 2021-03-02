@@ -28,7 +28,6 @@ struct Opt {
 
 struct AppState {
     dbconn: SqliteConnection,
-    prod_env: PathBuf,
 }
 
 #[get("/books")]
@@ -48,11 +47,12 @@ async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> 
 async fn main() -> std::io::Result<()> {
     let opt = Opt::from_args();
     let addr = format!("{}:{}", opt.ip, opt.port);
+    dotenv::from_filename("prod.env").unwrap();
+
     HttpServer::new(move || {
         App::new()
             .data(AppState {
                 dbconn: database::connect(&opt.database).unwrap(),
-                prod_env: dotenv::from_filename("prod.env").unwrap(),
             })
             .service(list_books)
             .service(add_book)
