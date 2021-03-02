@@ -1,7 +1,6 @@
 use crate::structs::{AddBookRequest, BookList};
 use actix_web::{get, post, web, App, HttpServer, Responder};
 use diesel::sqlite::SqliteConnection;
-use std::path::PathBuf;
 use structopt::StructOpt;
 
 #[macro_use]

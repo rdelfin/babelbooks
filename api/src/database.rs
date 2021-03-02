@@ -38,6 +38,6 @@ pub fn get_book(connection: &SqliteConnection, isbn_: &str) -> Result<Book> {
         .load::<Book>(connection)?;
     Ok(results
         .get(0)
-        .ok_or(anyhow!("Failed to get book with ISBN {}", isbn_))?
+        .ok_or_else(|| anyhow!("Failed to get book with ISBN {}", isbn_))?
         .clone())
 }
