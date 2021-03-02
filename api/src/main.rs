@@ -8,6 +8,7 @@ use structopt::StructOpt;
 extern crate diesel;
 
 mod database;
+mod models;
 mod schema;
 mod structs;
 

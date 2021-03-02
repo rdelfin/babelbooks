@@ -1,4 +1,4 @@
-use crate::database::Book;
+use crate::models::Book;
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
