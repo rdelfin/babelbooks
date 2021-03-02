@@ -1,4 +1,6 @@
-use actix_web::{get, App, HttpResponse, HttpServer, Responder};
+use crate::structs::{AddBookRequest, BookList};
+use actix_web::{get, post, web, App, HttpServer, Responder};
+use diesel::sqlite::SqliteConnection;
 use structopt::StructOpt;
 
 #[macro_use]
@@ -6,8 +8,9 @@ extern crate diesel;
 
 mod database;
 mod schema;
+mod structs;
 
-#[derive(Debug, StructOpt)]
+#[derive(Debug, Clone, StructOpt)]
 #[structopt(name = "babelbooks-api", about = "API for the Babel Books service.")]
 struct Opt {
     /// Activate debug mode
@@ -21,18 +24,36 @@ struct Opt {
     database: String,
 }
 
-#[get("/")]
-async fn hello() -> impl Responder {
-    HttpResponse::Ok().body("Hello world!")
+struct AppState {
+    dbconn: SqliteConnection,
+}
+
+#[get("/books")]
+async fn list_books(data: web::Data<AppState>) -> impl Responder {
+    web::Json(BookList {
+        books: database::get_all_books(&data.dbconn).unwrap(),
+    })
+}
+
+#[post("/book")]
+async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> impl Responder {
+    database::add_book(&data.dbconn, &req.isbn, &req.title, &req.author).unwrap();
+    web::Json(database::get_book(&data.dbconn, &req.isbn).unwrap())
 }
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     let opt = Opt::from_args();
     let addr = format!("{}:{}", opt.ip, opt.port);
-    database::connect(&opt.database);
-    HttpServer::new(|| App::new().service(hello))
-        .bind(addr)?
-        .run()
-        .await
+    HttpServer::new(move || {
+        App::new()
+            .data(AppState {
+                dbconn: database::connect(&opt.database).unwrap(),
+            })
+            .service(list_books)
+            .service(add_book)
+    })
+    .bind(addr)?
+    .run()
+    .await
 }
