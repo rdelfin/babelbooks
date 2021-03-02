@@ -1,6 +1,7 @@
 use crate::structs::{AddBookRequest, BookList};
 use actix_web::{get, post, web, App, HttpServer, Responder};
 use diesel::sqlite::SqliteConnection;
+use std::path::PathBuf;
 use structopt::StructOpt;
 
 #[macro_use]
@@ -26,6 +27,7 @@ struct Opt {
 
 struct AppState {
     dbconn: SqliteConnection,
+    prod_env: PathBuf,
 }
 
 #[get("/books")]
@@ -49,6 +51,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .data(AppState {
                 dbconn: database::connect(&opt.database).unwrap(),
+                prod_env: dotenv::from_filename("prod.env").unwrap(),
             })
             .service(list_books)
             .service(add_book)
