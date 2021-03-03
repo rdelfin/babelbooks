@@ -1,5 +1,8 @@
-use crate::structs::{AddBookRequest, BookList};
-use actix_web::{get, post, web, App, HttpServer, Responder};
+use crate::{
+    gbooks::GoogleBooksApi,
+    structs::{AddBookRequest, BookList},
+};
+use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 use diesel::sqlite::SqliteConnection;
 use structopt::StructOpt;
 
@@ -7,9 +10,11 @@ use structopt::StructOpt;
 extern crate diesel;
 
 mod database;
+mod gbooks;
 mod models;
 mod schema;
 mod structs;
+mod validation;
 
 #[derive(Debug, Clone, StructOpt)]
 #[structopt(name = "babelbooks-api", about = "API for the Babel Books service.")]
@@ -27,6 +32,7 @@ struct Opt {
 
 struct AppState {
     dbconn: SqliteConnection,
+    books_api: GoogleBooksApi,
 }
 
 #[get("/books")]
@@ -38,7 +44,8 @@ async fn list_books(data: web::Data<AppState>) -> impl Responder {
 
 #[post("/book")]
 async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> impl Responder {
-    database::add_book(&data.dbconn, &req.isbn, &req.title, &req.author).unwrap();
+    let book = data.books_api.get_book(&req.isbn).await.unwrap();
+    database::add_book(&data.dbconn, &book.isbn, &book.title, &book.author).unwrap();
     web::Json(database::get_book(&data.dbconn, &req.isbn).unwrap())
 }
 
@@ -52,6 +59,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .data(AppState {
                 dbconn: database::connect(&opt.database).unwrap(),
+                books_api: GoogleBooksApi::new().unwrap(),
             })
             .service(list_books)
             .service(add_book)
