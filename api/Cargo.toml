@@ -11,6 +11,7 @@ actix-web = { version = "3"}
 anyhow = "1.0"
 diesel = { version = "1.4", features = ["sqlite"] }
 dotenv = "0.15"
+libpasta = "0.1.1"
 reqwest = { version = "0.10", features = ["json"] }
 serde = "1.0"
 structopt = "0.3"
