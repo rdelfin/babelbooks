@@ -35,15 +35,15 @@ pub struct NewUser<'a> {
 #[belongs_to(User)]
 #[belongs_to(Book, foreign_key = "isbn")]
 pub struct OwnedBook {
-    user_id: i32,
-    isbn: String,
+    pub user_id: i32,
+    pub isbn: String,
 }
 
 #[derive(Insertable)]
 #[table_name = "owned_books"]
 pub struct NewOwnedBook<'a> {
-    user_id: i32,
-    isbn: &'a str,
+    pub user_id: i32,
+    pub isbn: &'a str,
 }
 
 #[derive(Queryable, Associations, Serialize, Deserialize, PartialEq, Debug, Clone)]
