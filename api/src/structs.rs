@@ -11,6 +11,18 @@ pub struct AddBookRequest {
     pub isbn: String,
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct CreateAccountRequest {
+    pub username: String,
+    pub password: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct CreateAccountResponse {
+    pub username: String,
+    pub id: i32,
+}
+
 //======================================================
 //             Google Book API structs
 //======================================================

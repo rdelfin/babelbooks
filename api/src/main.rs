@@ -1,8 +1,8 @@
 use crate::{
     gbooks::GoogleBooksApi,
-    structs::{AddBookRequest, BookList},
+    structs::{AddBookRequest, BookList, CreateAccountRequest, CreateAccountResponse},
 };
-use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
+use actix_web::{get, post, web, App, HttpServer, Responder};
 use diesel::sqlite::SqliteConnection;
 use structopt::StructOpt;
 
@@ -49,6 +49,23 @@ async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> 
     web::Json(database::get_book(&data.dbconn, &req.isbn).unwrap())
 }
 
+#[post("/account/new")]
+async fn new_account(
+    req: web::Json<CreateAccountRequest>,
+    data: web::Data<AppState>,
+) -> impl Responder {
+    let id = database::add_user(
+        &data.dbconn,
+        &req.username,
+        &libpasta::hash_password(&req.password),
+    )
+    .unwrap();
+    web::Json(CreateAccountResponse {
+        username: req.username.clone(),
+        id,
+    })
+}
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     let opt = Opt::from_args();
@@ -63,6 +80,7 @@ async fn main() -> std::io::Result<()> {
             })
             .service(list_books)
             .service(add_book)
+            .service(new_account)
     })
     .bind(addr)?
     .run()
