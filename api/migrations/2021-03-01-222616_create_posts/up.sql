@@ -13,7 +13,13 @@ CREATE TABLE owned_books (
 );
 
 CREATE TABLE user (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     username VARCHAR NOT NULL UNIQUE,
     password VARCHAR NOT NULL
+);
+
+CREATE TABLE user_sessions (
+    session_id VARCHAR NOT NULL  PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(id)
 );

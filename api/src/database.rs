@@ -1,6 +1,6 @@
 use crate::{
-    models::{Book, NewBook, NewUser},
-    schema::{book, user},
+    models::{Book, NewBook, NewUser, NewUserSession, UserSession},
+    schema::{book, user, user_sessions},
 };
 use anyhow::{anyhow, Result};
 use diesel::{prelude::*, sql_types, sqlite::SqliteConnection};
@@ -54,4 +54,27 @@ pub fn add_user(connection: &SqliteConnection, username: &str, password: &str) -
         .values(NewUser { username, password })
         .execute(connection)?;
     Ok(diesel::select(last_insert_rowid).get_result::<i32>(connection)?)
+}
+
+pub fn add_session(connection: &SqliteConnection, session_id: &str, user_id: i32) -> Result<()> {
+    diesel::insert_into(user_sessions::table)
+        .values(NewUserSession {
+            session_id,
+            user_id,
+        })
+        .execute(connection)?;
+    Ok(())
+}
+
+pub fn get_user_for_session(
+    connection: &SqliteConnection,
+    session_id_: &str,
+) -> Result<Option<i32>> {
+    use crate::schema::user_sessions::dsl::*;
+    Ok(user_sessions
+        .filter(session_id.eq(session_id_))
+        .limit(1)
+        .load::<UserSession>(connection)?
+        .get(0)
+        .map(|s| s.user_id))
 }

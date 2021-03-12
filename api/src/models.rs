@@ -1,4 +1,4 @@
-use crate::schema::{book, owned_books, user};
+use crate::schema::{book, owned_books, user, user_sessions};
 use serde::{Deserialize, Serialize};
 
 #[derive(Queryable, Serialize, Deserialize, PartialEq, Debug, Clone)]
@@ -44,4 +44,18 @@ pub struct OwnedBook {
 pub struct NewOwnedBook<'a> {
     user_id: i32,
     isbn: &'a str,
+}
+
+#[derive(Queryable, Associations, Serialize, Deserialize, PartialEq, Debug, Clone)]
+#[belongs_to(User)]
+pub struct UserSession {
+    pub session_id: String,
+    pub user_id: i32,
+}
+
+#[derive(Insertable)]
+#[table_name = "user_sessions"]
+pub struct NewUserSession<'a> {
+    pub session_id: &'a str,
+    pub user_id: i32,
 }
