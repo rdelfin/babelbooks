@@ -49,13 +49,14 @@ async fn list_books(req: web::Json<ListBooksRequest>, data: web::Data<AppState>)
 
 #[post("/book")]
 async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> impl Responder {
-    account_manager::verify(&data.dbconn, &req.session_id).unwrap();
+    let user_id = account_manager::verify(&data.dbconn, &req.session_id).unwrap();
     if !validation::validate_isbn(&req.isbn) {
         (Err(anyhow::anyhow!("ISBN is not valid."))).unwrap()
     }
 
     let book = data.books_api.get_book(&req.isbn).await.unwrap();
     database::add_book(&data.dbconn, &book.isbn, &book.title, &book.author).unwrap();
+    database::link_book_user(&data.dbconn, user_id, &book.isbn).unwrap();
     web::Json(database::get_book(&data.dbconn, &req.isbn).unwrap())
 }
 

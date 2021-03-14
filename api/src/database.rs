@@ -1,6 +1,6 @@
 use crate::{
-    models::{Book, NewBook, NewUser, NewUserSession, OwnedBook, User, UserSession},
-    schema::{book, user, user_sessions},
+    models::{Book, NewBook, NewOwnedBook, NewUser, NewUserSession, OwnedBook, User, UserSession},
+    schema::{book, owned_books, user, user_sessions},
 };
 use anyhow::{anyhow, Result};
 use diesel::{prelude::*, sql_types, sqlite::SqliteConnection};
@@ -38,6 +38,13 @@ pub fn add_book(
             title,
             author,
         })
+        .execute(connection)?;
+    Ok(())
+}
+
+pub fn link_book_user(connection: &SqliteConnection, user_id: i32, isbn: &str) -> Result<()> {
+    diesel::insert_into(owned_books::table)
+        .values(NewOwnedBook { user_id, isbn })
         .execute(connection)?;
     Ok(())
 }
