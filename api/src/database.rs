@@ -1,5 +1,5 @@
 use crate::{
-    models::{Book, NewBook, NewUser, NewUserSession, User, UserSession},
+    models::{Book, NewBook, NewUser, NewUserSession, OwnedBook, User, UserSession},
     schema::{book, user, user_sessions},
 };
 use anyhow::{anyhow, Result};
@@ -16,9 +16,14 @@ pub fn connect(db_url: &str) -> Result<SqliteConnection> {
     Ok(SqliteConnection::establish(&db_url)?)
 }
 
-pub fn get_all_books(connection: &SqliteConnection) -> Result<Vec<Book>> {
-    use crate::schema::book::dsl::*;
-    Ok(book.load::<Book>(connection)?)
+pub fn get_all_books(connection: &SqliteConnection, user_id_: i32) -> Result<Vec<Book>> {
+    use crate::schema::owned_books::dsl::*;
+
+    let books_joins = owned_books
+        .filter(user_id.eq(user_id_))
+        .inner_join(book::table)
+        .load::<(OwnedBook, Book)>(connection)?;
+    Ok(books_joins.into_iter().map(|(_, book)| book).collect())
 }
 
 pub fn add_book(

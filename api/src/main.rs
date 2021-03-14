@@ -41,9 +41,9 @@ struct AppState {
 
 #[get("/books")]
 async fn list_books(req: web::Json<ListBooksRequest>, data: web::Data<AppState>) -> impl Responder {
-    account_manager::verify(&data.dbconn, &req.session_id).unwrap();
+    let user_id = account_manager::verify(&data.dbconn, &req.session_id).unwrap();
     web::Json(BookList {
-        books: database::get_all_books(&data.dbconn).unwrap(),
+        books: database::get_all_books(&data.dbconn, user_id).unwrap(),
     })
 }
 

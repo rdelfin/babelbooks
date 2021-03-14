@@ -35,8 +35,8 @@ pub struct NewUser<'a> {
 #[belongs_to(User)]
 #[belongs_to(Book, foreign_key = "isbn")]
 pub struct OwnedBook {
-    pub user_id: i32,
     pub isbn: String,
+    pub user_id: i32,
 }
 
 #[derive(Insertable)]
