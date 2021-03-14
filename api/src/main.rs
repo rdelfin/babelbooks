@@ -1,8 +1,8 @@
 use crate::{
     gbooks::GoogleBooksApi,
     structs::{
-        AddBookRequest, BookList, CreateAccountRequest, CreateAccountResponse, LoginRequest,
-        LoginResponse,
+        AddBookRequest, BookList, CreateAccountRequest, CreateAccountResponse, ListBooksRequest,
+        LoginRequest, LoginResponse,
     },
 };
 use actix_web::{get, post, web, App, HttpServer, Responder};
@@ -40,7 +40,8 @@ struct AppState {
 }
 
 #[get("/books")]
-async fn list_books(data: web::Data<AppState>) -> impl Responder {
+async fn list_books(req: web::Json<ListBooksRequest>, data: web::Data<AppState>) -> impl Responder {
+    account_manager::verify(&data.dbconn, &req.session_id).unwrap();
     web::Json(BookList {
         books: database::get_all_books(&data.dbconn).unwrap(),
     })
@@ -48,6 +49,8 @@ async fn list_books(data: web::Data<AppState>) -> impl Responder {
 
 #[post("/book")]
 async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> impl Responder {
+    account_manager::verify(&data.dbconn, &req.session_id).unwrap();
+
     let book = data.books_api.get_book(&req.isbn).await.unwrap();
     database::add_book(&data.dbconn, &book.isbn, &book.title, &book.author).unwrap();
     web::Json(database::get_book(&data.dbconn, &req.isbn).unwrap())

@@ -45,3 +45,9 @@ fn gen_session() -> String {
         .map(char::from)
         .collect()
 }
+
+pub fn verify(dbconn: &SqliteConnection, session_id: &str) -> Result<()> {
+    database::get_user_for_session(dbconn, session_id)?
+        .ok_or(anyhow!("User session is invalid"))?;
+    Ok(())
+}

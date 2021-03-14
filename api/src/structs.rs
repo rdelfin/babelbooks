@@ -7,8 +7,14 @@ pub struct BookList {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct ListBooksRequest {
+    pub session_id: String,
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct AddBookRequest {
     pub isbn: String,
+    pub session_id: String,
 }
 
 #[derive(Serialize, Deserialize)]
