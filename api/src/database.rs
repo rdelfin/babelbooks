@@ -70,7 +70,7 @@ pub fn get_id_for_username(connection: &SqliteConnection, username_: &str) -> Re
         .limit(1)
         .load::<User>(connection)?
         .get(0)
-        .ok_or(anyhow!("No user with username {}", username_))?
+        .ok_or_else(|| anyhow!("No user with username {}", username_))?
         .id)
 }
 
@@ -81,7 +81,7 @@ pub fn get_hashed_password(connection: &SqliteConnection, username_: &str) -> Re
         .limit(1)
         .load::<User>(connection)?
         .get(0)
-        .ok_or(anyhow!("No user with username {}", username_))?
+        .ok_or_else(|| anyhow!("No user with username {}", username_))?
         .password
         .clone())
 }

@@ -33,7 +33,7 @@ pub fn login_user(
         &session_id,
         database::get_id_for_username(dbconn, username)?,
     )?;
-    Ok(session_id.into())
+    Ok(session_id)
 }
 
 fn gen_session() -> String {
@@ -48,6 +48,6 @@ fn gen_session() -> String {
 
 pub fn verify(dbconn: &SqliteConnection, session_id: &str) -> Result<()> {
     database::get_user_for_session(dbconn, session_id)?
-        .ok_or(anyhow!("User session is invalid"))?;
+        .ok_or_else(|| anyhow!("User session is invalid"))?;
     Ok(())
 }

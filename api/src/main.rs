@@ -50,6 +50,9 @@ async fn list_books(req: web::Json<ListBooksRequest>, data: web::Data<AppState>)
 #[post("/book")]
 async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> impl Responder {
     account_manager::verify(&data.dbconn, &req.session_id).unwrap();
+    if !validation::validate_isbn(&req.isbn) {
+        (Err(anyhow::anyhow!("ISBN is not valid."))).unwrap()
+    }
 
     let book = data.books_api.get_book(&req.isbn).await.unwrap();
     database::add_book(&data.dbconn, &book.isbn, &book.title, &book.author).unwrap();
@@ -61,12 +64,12 @@ async fn new_account(
     req: web::Json<CreateAccountRequest>,
     data: web::Data<AppState>,
 ) -> impl Responder {
-    let (id, session) =
+    let (id, session_id) =
         account_manager::create_and_login(&data.dbconn, &req.username, &req.password).unwrap();
     web::Json(CreateAccountResponse {
         username: req.username.clone(),
         id,
-        session_id: session.into(),
+        session_id,
     })
 }
 

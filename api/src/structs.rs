@@ -51,7 +51,8 @@ pub mod google {
     #[derive(Serialize, Deserialize, Clone, Debug)]
     pub struct IsbnSearchResult {
         pub kind: String,
-        pub totalItems: u32,
+        #[serde(rename = "totalItems")]
+        pub total_items: u32,
         pub items: Vec<Volume>,
     }
 
@@ -60,8 +61,10 @@ pub mod google {
         pub kind: String,
         pub id: String,
         pub etag: String,
-        pub selfLink: String,
-        pub volumeInfo: VolumeInfo,
+        #[serde(rename = "selfLink")]
+        pub self_link: String,
+        #[serde(rename = "volumeInfo")]
+        pub volume_info: VolumeInfo,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -70,11 +73,15 @@ pub mod google {
         pub subtitle: Option<String>,
         pub authors: Option<Vec<String>>,
         pub publisher: Option<String>,
-        pub publishedDate: Option<String>,
+        #[serde(rename = "publishedDate")]
+        pub published_date: Option<String>,
         pub description: Option<String>,
-        pub industryIdentifiers: Vec<IndustryIdentifier>,
-        pub pageCount: Option<u64>,
-        pub printType: String,
+        #[serde(rename = "industryIdentifiers")]
+        pub industry_identifiers: Vec<IndustryIdentifier>,
+        #[serde(rename = "pageCount")]
+        pub page_count: Option<u64>,
+        #[serde(rename = "printType")]
+        pub print_type: String,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]

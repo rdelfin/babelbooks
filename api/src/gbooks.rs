@@ -1,5 +1,4 @@
 use crate::{models::Book, structs::google};
-use actix_web::client::Client;
 use anyhow::Result;
 
 pub struct GoogleBooksApi {
@@ -14,20 +13,10 @@ impl GoogleBooksApi {
     }
 
     pub async fn get_book(&self, isbn: &str) -> Result<Book> {
-        let mut client = Client::default();
         let url = format!(
             "https://www.googleapis.com/books/v1/volumes?q=isbn%3D{}&key={}",
             isbn, self.api_key
         );
-        println!("URL: {}", url);
-        /*let response = client
-        .get(&url)
-        .header("User-Agent", "actix-web/3.0")
-        .send()
-        .await
-        .unwrap()
-        .json::<google::IsbnSearchResult>()
-        .await?;*/
 
         let response = reqwest::get(&url)
             .await?
@@ -38,9 +27,9 @@ impl GoogleBooksApi {
 
         Ok(Book {
             isbn: isbn.to_string(),
-            title: volume.volumeInfo.title.clone(),
+            title: volume.volume_info.title.clone(),
             author: volume
-                .volumeInfo
+                .volume_info
                 .authors
                 .as_ref()
                 .unwrap_or(&vec![])
