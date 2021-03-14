@@ -1,5 +1,5 @@
 use crate::{
-    models::{Book, NewBook, NewUser, NewUserSession, UserSession},
+    models::{Book, NewBook, NewUser, NewUserSession, User, UserSession},
     schema::{book, user, user_sessions},
 };
 use anyhow::{anyhow, Result};
@@ -49,11 +49,41 @@ pub fn get_book(connection: &SqliteConnection, isbn_: &str) -> Result<Book> {
         .clone())
 }
 
-pub fn add_user(connection: &SqliteConnection, username: &str, password: &str) -> Result<i32> {
+pub fn add_user(
+    connection: &SqliteConnection,
+    username: &str,
+    hashed_password: &str,
+) -> Result<i32> {
     diesel::insert_into(user::table)
-        .values(NewUser { username, password })
+        .values(NewUser {
+            username,
+            password: hashed_password,
+        })
         .execute(connection)?;
     Ok(diesel::select(last_insert_rowid).get_result::<i32>(connection)?)
+}
+
+pub fn get_id_for_username(connection: &SqliteConnection, username_: &str) -> Result<i32> {
+    use crate::schema::user::dsl::*;
+    Ok(user
+        .filter(username.eq(username_))
+        .limit(1)
+        .load::<User>(connection)?
+        .get(0)
+        .ok_or(anyhow!("No user with username {}", username_))?
+        .id)
+}
+
+pub fn get_hashed_password(connection: &SqliteConnection, username_: &str) -> Result<String> {
+    use crate::schema::user::dsl::*;
+    Ok(user
+        .filter(username.eq(username_))
+        .limit(1)
+        .load::<User>(connection)?
+        .get(0)
+        .ok_or(anyhow!("No user with username {}", username_))?
+        .password
+        .clone())
 }
 
 pub fn add_session(connection: &SqliteConnection, session_id: &str, user_id: i32) -> Result<()> {

@@ -21,6 +21,18 @@ pub struct CreateAccountRequest {
 pub struct CreateAccountResponse {
     pub username: String,
     pub id: i32,
+    pub session_id: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct LoginRequest {
+    pub username: String,
+    pub password: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct LoginResponse {
+    pub session_id: String,
 }
 
 //======================================================

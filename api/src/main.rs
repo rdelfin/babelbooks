@@ -1,6 +1,9 @@
 use crate::{
     gbooks::GoogleBooksApi,
-    structs::{AddBookRequest, BookList, CreateAccountRequest, CreateAccountResponse},
+    structs::{
+        AddBookRequest, BookList, CreateAccountRequest, CreateAccountResponse, LoginRequest,
+        LoginResponse,
+    },
 };
 use actix_web::{get, post, web, App, HttpServer, Responder};
 use diesel::sqlite::SqliteConnection;
@@ -9,6 +12,7 @@ use structopt::StructOpt;
 #[macro_use]
 extern crate diesel;
 
+mod account_manager;
 mod database;
 mod gbooks;
 mod models;
@@ -54,15 +58,20 @@ async fn new_account(
     req: web::Json<CreateAccountRequest>,
     data: web::Data<AppState>,
 ) -> impl Responder {
-    let id = database::add_user(
-        &data.dbconn,
-        &req.username,
-        &libpasta::hash_password(&req.password),
-    )
-    .unwrap();
+    let (id, session) =
+        account_manager::create_and_login(&data.dbconn, &req.username, &req.password).unwrap();
     web::Json(CreateAccountResponse {
         username: req.username.clone(),
         id,
+        session_id: session.into(),
+    })
+}
+
+#[post("/account/login")]
+async fn login_account(req: web::Json<LoginRequest>, data: web::Data<AppState>) -> impl Responder {
+    web::Json(LoginResponse {
+        session_id: account_manager::login_user(&data.dbconn, &req.username, &req.password)
+            .unwrap(),
     })
 }
 
@@ -81,6 +90,7 @@ async fn main() -> std::io::Result<()> {
             .service(list_books)
             .service(add_book)
             .service(new_account)
+            .service(login_account)
     })
     .bind(addr)?
     .run()
