@@ -3,7 +3,7 @@ use crate::{
     schema::{book, owned_books, user, user_sessions},
 };
 use anyhow::{anyhow, Result};
-use diesel::{prelude::*, sql_types, sqlite::SqliteConnection};
+use diesel::{dsl::count_star, prelude::*, sql_types, sqlite::SqliteConnection};
 
 // Declarations used for auto-gen IDs
 no_arg_sql_function!(
@@ -42,6 +42,17 @@ pub fn add_book(
     Ok(())
 }
 
+pub fn book_is_linked(connection: &SqliteConnection, isbn_: &str, user_id_: i32) -> Result<bool> {
+    use crate::schema::owned_books::dsl::*;
+
+    Ok(owned_books
+        .select(count_star())
+        .filter(user_id.eq(user_id_))
+        .filter(isbn.eq(isbn_))
+        .first::<i64>(connection)?
+        > 0)
+}
+
 pub fn link_book_user(connection: &SqliteConnection, user_id: i32, isbn: &str) -> Result<()> {
     diesel::insert_into(owned_books::table)
         .values(NewOwnedBook { user_id, isbn })
@@ -49,16 +60,13 @@ pub fn link_book_user(connection: &SqliteConnection, user_id: i32, isbn: &str) -
     Ok(())
 }
 
-pub fn get_book(connection: &SqliteConnection, isbn_: &str) -> Result<Book> {
+pub fn get_book(connection: &SqliteConnection, isbn_: &str) -> Result<Option<Book>> {
     use crate::schema::book::dsl::*;
     let results = book
         .filter(isbn.eq(isbn_))
         .limit(1)
         .load::<Book>(connection)?;
-    Ok(results
-        .get(0)
-        .ok_or_else(|| anyhow!("Failed to get book with ISBN {}", isbn_))?
-        .clone())
+    Ok(results.get(0).cloned())
 }
 
 pub fn add_user(

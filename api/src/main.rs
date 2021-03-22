@@ -54,10 +54,21 @@ async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> 
         (Err(anyhow::anyhow!("ISBN is not valid."))).unwrap()
     }
 
-    let book = data.books_api.get_book(&req.isbn).await.unwrap();
-    database::add_book(&data.dbconn, &book.isbn, &book.title, &book.author).unwrap();
-    database::link_book_user(&data.dbconn, user_id, &book.isbn).unwrap();
-    web::Json(database::get_book(&data.dbconn, &req.isbn).unwrap())
+    let book = match database::get_book(&data.dbconn, &req.isbn).unwrap() {
+        Some(b) => b,
+        None => {
+            let book = data.books_api.get_book(&req.isbn).await.unwrap();
+            database::add_book(&data.dbconn, &book.isbn, &book.title, &book.author).unwrap();
+            database::get_book(&data.dbconn, &req.isbn)
+                .unwrap()
+                .unwrap()
+        }
+    };
+
+    if !database::book_is_linked(&data.dbconn, &book.isbn, user_id).unwrap() {
+        database::link_book_user(&data.dbconn, user_id, &book.isbn).unwrap();
+    }
+    web::Json(book)
 }
 
 #[post("/account/new")]
