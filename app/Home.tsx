@@ -3,37 +3,21 @@
  */
 
 import { Appbar } from "react-native-paper";
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 export default function Home() {
     return (
-        <Appbar style={styles.bottom}>
+        <Appbar.Header>
+            <Appbar.BackAction onPress={() => console.log("Pressed back")} />
+            <Appbar.Content title="Babel Books" subtitle="Your Library" />
             <Appbar.Action
-                icon="archive"
-                onPress={() => console.log("Pressed archive")}
+                icon="magnify"
+                onPress={() => console.log("Pressed magnify")}
             />
             <Appbar.Action
-                icon="mail"
-                onPress={() => console.log("Pressed mail")}
+                icon="dots-vertical"
+                onPress={() => console.log("Pressed dots vertical")}
             />
-            <Appbar.Action
-                icon="label"
-                onPress={() => console.log("Pressed label")}
-            />
-            <Appbar.Action
-                icon="delete"
-                onPress={() => console.log("Pressed delete")}
-            />
-        </Appbar>
+        </Appbar.Header>
     );
 }
-
-const styles = StyleSheet.create({
-    bottom: {
-        position: "absolute",
-        left: 0,
-        right: 0,
-        top: 0,
-    },
-});
