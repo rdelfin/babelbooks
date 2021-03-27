@@ -24,7 +24,7 @@ export default function Home() {
                     onPress={() => console.log("Pressed dots vertical")}
                 />
             </Appbar.Header>
-            <BookCard />
+            <BookCard title="Jurassic Park" authors={["Michael Crichton"]} thumbnail_url="http://books.google.com/books/content?id=DYfxuAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api" />
         </View>
     );
 }

@@ -5,13 +5,19 @@
 import React from "react";
 import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
 
-export default function BookCard() {
+export interface Props {
+    title: string;
+    authors: string[];
+    thumbnail_url: string;
+}
+
+const BookCard: React.FC<Props> = (props) => {
     return (
         <Card elevation={10}>
-            <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
+            <Card.Cover source={{ uri: props.thumbnail_url }} />
             <Card.Title
-                title="Card Title"
-                subtitle="Card Subtitle"
+                title={props.title}
+                subtitle={props.authors.join(", ")}
             />
             <Card.Content>
                 <Paragraph>Card content</Paragraph>
@@ -23,3 +29,5 @@ export default function BookCard() {
         </Card>
     );
 }
+
+export default BookCard;
