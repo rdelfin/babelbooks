@@ -24,7 +24,6 @@ impl GoogleBooksApi {
             .await?;
 
         let volume = &response.items[0];
-
         Ok(Book {
             isbn: isbn.to_string(),
             title: volume.volume_info.title.clone(),
@@ -34,6 +33,16 @@ impl GoogleBooksApi {
                 .as_ref()
                 .unwrap_or(&vec![])
                 .join(", "),
+            thumbnail: volume
+                .volume_info
+                .image_links
+                .clone()
+                .map(|il| il.thumbnail.clone()),
+            thumbnail_small: volume
+                .volume_info
+                .image_links
+                .clone()
+                .map(|il| il.small_thumbnail.clone()),
         })
     }
 }

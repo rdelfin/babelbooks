@@ -1,7 +1,9 @@
 CREATE TABLE book (
   isbn VARCHAR NOT NULL PRIMARY KEY,
   title VARCHAR NOT NULL,
-  author VARCHAR NOT NULL
+  author VARCHAR NOT NULL,
+  thumbnail VARCHAR,
+  thumbnail_small VARCHAR
 );
 
 CREATE TABLE owned_books (

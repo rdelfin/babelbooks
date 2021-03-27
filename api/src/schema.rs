@@ -3,6 +3,8 @@ table! {
         isbn -> Text,
         title -> Text,
         author -> Text,
+        thumbnail -> Nullable<Text>,
+        thumbnail_small -> Nullable<Text>,
     }
 }
 

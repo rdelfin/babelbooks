@@ -6,6 +6,8 @@ pub struct Book {
     pub isbn: String,
     pub title: String,
     pub author: String,
+    pub thumbnail: Option<String>,
+    pub thumbnail_small: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -14,6 +16,8 @@ pub struct NewBook<'a> {
     pub isbn: &'a str,
     pub title: &'a str,
     pub author: &'a str,
+    pub thumbnail: Option<&'a str>,
+    pub thumbnail_small: Option<&'a str>,
 }
 
 #[derive(Identifiable, Queryable, Serialize, Deserialize, PartialEq, Debug, Clone)]

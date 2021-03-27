@@ -58,7 +58,15 @@ async fn add_book(req: web::Json<AddBookRequest>, data: web::Data<AppState>) -> 
         Some(b) => b,
         None => {
             let book = data.books_api.get_book(&req.isbn).await.unwrap();
-            database::add_book(&data.dbconn, &book.isbn, &book.title, &book.author).unwrap();
+            database::add_book(
+                &data.dbconn,
+                &book.isbn,
+                &book.title,
+                &book.author,
+                book.thumbnail.as_deref(),
+                book.thumbnail_small.as_deref(),
+            )
+            .unwrap();
             database::get_book(&data.dbconn, &req.isbn)
                 .unwrap()
                 .unwrap()

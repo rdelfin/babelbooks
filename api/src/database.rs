@@ -31,12 +31,16 @@ pub fn add_book(
     isbn: &str,
     title: &str,
     author: &str,
+    thumbnail: Option<&str>,
+    thumbnail_small: Option<&str>,
 ) -> Result<()> {
     diesel::insert_into(book::table)
         .values(NewBook {
             isbn,
             title,
             author,
+            thumbnail,
+            thumbnail_small,
         })
         .execute(connection)?;
     Ok(())

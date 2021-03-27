@@ -1,0 +1,737 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 3343,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "7-IaogEACAAJ",
+      "etag": "WiBsON0+hDQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/7-IaogEACAAJ",
+      "volumeInfo": {
+        "title": "Computer Systems",
+        "subtitle": "A Programmer's Perspective",
+        "authors": [
+          "Randal E. Bryant",
+          "David R. O'Hallaron"
+        ],
+        "publisher": "Addison-Wesley",
+        "publishedDate": "2015-03-02",
+        "description": "&\u003estandalone product; MasteringEngineering® does not come packaged with this content. If you would like to purchase both the physical text and MasteringEngineering search for 0134123832 / 9780134123837 Computer Systems: A Programmer's Perspective plus MasteringEngineering with Pearson eText -- Access Card Package, 3/e Package consists of: 013409266X/9780134092669 Computer Systems: A Programmer's Perspective, 3/e 0134071921/9780134071923 MasteringEngineering with Pearson eText -- Standalone Access Card -- for Computer Systems: A Programmer's Perspective, 3/e MasteringEngineering should only be purchased when required by an instructor. For courses in Computer Science and Programming Computer systems: A Programmer's Perspective explains the underlying elements common among all computer systems and how they affect general application performance. Written from the programmer's perspective, this book strives to teach readers how understanding basic elements of computer systems and executing real practice can lead them to create better programs. Spanning across computer science themes such as hardware architecture, the operating system, and systems software, the Third Edition serves as a comprehensive introduction to programming. This book strives to create programmers who understand all elements of computer systems and will be able to engage in any application of the field--from fixing faulty software, to writing more capable programs, to avoiding common flaws. It lays the groundwork for readers to delve into more intensive topics such as computer architecture, embedded systems, and cybersecurity. This book focuses on systems that execute an x86-64 machine code, and recommends that programmers have access to a Linux system for this course. Programmers should have basic familiarity with C or C++. Also available with MasteringEngineering MasteringEngineering is an online homework, tutorial, and assessment system, designed to improve results through personalized learning. This innovative online program emulates the instructor's office hour environment, engaging and guiding students through engineering concepts with self-paced individualized coaching With a wide range of activities available, students can actively learn, understand, and retain even the most difficult concepts. Students, if interested in purchasing this title with MasteringEngineering, ask your instructor for the correct package ISBN and Course ID. Instructors, contact your Pearson representative for more information.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "013409266X"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780134092669"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 1120,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=7-IaogEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=7-IaogEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=7-IaogEACAAJ&dq=isbn%3D9780134092669&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=7-IaogEACAAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Computer_Systems.html?hl=&id=7-IaogEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=7-IaogEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Written from the programmer’s perspective, this book strives to teach students how understanding basic elements of computer systems and executing real practice can lead them to create better programs.&quot;--Publisher&#39;s website."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "M5wVnwEACAAJ",
+      "etag": "EV3KesOi5QI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/M5wVnwEACAAJ",
+      "volumeInfo": {
+        "title": "Computer Systems",
+        "subtitle": "A Programmer's Perspective",
+        "authors": [
+          "Randal E.. Bryant",
+          "David Richard O'Hallaron"
+        ],
+        "publishedDate": "2013-07-23",
+        "description": "For Computer Systems, Computer Organization and Architecture courses in CS, EE, and ECE departments. Few students studying computer science or computer engineering will ever have the opportunity to build a computer system. On the other hand, most students will be required to use and program computers on a near daily basis. Computer Systems: A Programmer's Perspective introduces the important and enduring concepts that underlie computer systems by showing how these ideas affect the correctness, performance, and utility of application programs. The text's hands-on approach (including a comprehensive set of labs) helps students understand the under-the-hood operation of a modern computer system and prepares them for future courses in systems topics such as compilers, computer architecture, operating systems, and networking.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1292025840"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781292025841"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 962,
+        "printType": "BOOK",
+        "categories": [
+          "Computer programming"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=M5wVnwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=M5wVnwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=M5wVnwEACAAJ&dq=isbn%3D9780134092669&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=M5wVnwEACAAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Computer_Systems.html?hl=&id=M5wVnwEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=M5wVnwEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Also check out the new CS:APP blog for interesting stories, updates on the book contents and extra material, and the authors&#39; experiences in using this book in courses at CMU: http://csappbook.blogspot.com."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "4pgQfXQvekcC",
+      "etag": "PV8wGEMNGNo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/4pgQfXQvekcC",
+      "volumeInfo": {
+        "title": "Learning Python",
+        "subtitle": "Powerful Object-Oriented Programming",
+        "authors": [
+          "Mark Lutz"
+        ],
+        "publisher": "\"O'Reilly Media, Inc.\"",
+        "publishedDate": "2013-06-12",
+        "description": "Get a comprehensive, in-depth introduction to the core Python language with this hands-on book. Based on author Mark Lutz’s popular training course, this updated fifth edition will help you quickly write efficient, high-quality code with Python. It’s an ideal way to begin, whether you’re new to programming or a professional developer versed in other languages. Complete with quizzes, exercises, and helpful illustrations, this easy-to-follow, self-paced tutorial gets you started with both Python 2.7 and 3.3— the latest releases in the 3.X and 2.X lines—plus all other releases in common use today. You’ll also learn some advanced language features that recently have become more common in Python code. Explore Python’s major built-in object types such as numbers, lists, and dictionaries Create and process objects with Python statements, and learn Python’s general syntax model Use functions to avoid code redundancy and package code for reuse Organize statements, functions, and other tools into larger components with modules Dive into classes: Python’s object-oriented programming tool for structuring code Write large programs with Python’s exception-handling model and development tools Learn advanced Python tools, including decorators, descriptors, metaclasses, and Unicode processing",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781449355692"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1449355692"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 1600,
+        "printType": "BOOK",
+        "averageRating": 3.5,
+        "ratingsCount": 4,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.36.39.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=4pgQfXQvekcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=4pgQfXQvekcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=4pgQfXQvekcC&printsec=frontcover&dq=isbn%3D9780134092669&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=4pgQfXQvekcC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=4pgQfXQvekcC"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 38.5,
+          "currencyCode": "GBP"
+        },
+        "retailPrice": {
+          "amount": 25.02,
+          "currencyCode": "GBP"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=4pgQfXQvekcC&rdid=book-4pgQfXQvekcC&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 38500000,
+              "currencyCode": "GBP"
+            },
+            "retailPrice": {
+              "amountInMicros": 25020000,
+              "currencyCode": "GBP"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=4pgQfXQvekcC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Get a comprehensive, in-depth introduction to the core Python language with this hands-on book."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "NJDzzAEACAAJ",
+      "etag": "dE+QT2qynXs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/NJDzzAEACAAJ",
+      "volumeInfo": {
+        "title": "The Team Handbook",
+        "subtitle": "How to Use Teams to Improve Quality",
+        "authors": [
+          "Peter R. Scholtes"
+        ],
+        "publishedDate": "1988",
+        "description": "This is a 'how to' book on project management, quality and problem solving using teams. Table of contents: * Doing business in a new business world * The basics of quality improvement (improvement concepts, tools of the scientific approaches and tools for making team decisions) * Setting the stage for a successful project (selecting members) * Getting underway (guidelines for productive meetings, record keeping, goal setting, preparing for and conducting the first meeting, evaluation) * Building an improvement plan (five crucial improvement activities, project planning and improvement strategies) * Learning to work together (team dynamics, roller coaster rides, recipe for a successful team, common problem solving * Team building activities (14 activities and 10 team building exercises) * Appendix: the planning grid.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0962226424"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780962226427"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 250,
+        "printType": "BOOK",
+        "categories": [
+          "Quality circles"
+        ],
+        "averageRating": 5,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=NJDzzAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=NJDzzAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=NJDzzAEACAAJ&dq=isbn%3D9780134092669&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=NJDzzAEACAAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Team_Handbook.html?hl=&id=NJDzzAEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=NJDzzAEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This is a &#39;how to&#39; book on project management, quality and problem solving using teams."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "iq55CwAAQBAJ",
+      "etag": "vpIiFRQdPMQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/iq55CwAAQBAJ",
+      "volumeInfo": {
+        "title": "A Survey of Mathematics with Applications",
+        "authors": [
+          "Allen R. Angel",
+          "Christine D. Abbott",
+          "Dennis Runde"
+        ],
+        "publisher": "Pearson",
+        "publishedDate": "2016-01-11",
+        "description": "For courses covering general topics in math course, often called liberal arts math, contemporary math, or survey of math. Everyday math, everyday language. The Tenth Edition of A Survey of Mathematics with Applications continues the tradition of showing students how we use mathematics in our daily lives and why it’s important, in a clear and accessible way. With straightforward language, detailed examples, and interesting applications, the authors ensure non-majors will relate to the math and understand the mathematical concepts that pervade their lives. With this revision, an expanded media program in MyMathLab, and a new workbook further build upon the tradition of motivating and supporting student learning. Also available with MyMathLab MyMathLab is an online homework, tutorial, and assessment program designed to work with this text to engage students and improve results. Within its structured environment, students practice what they learn, test their understanding, and engage with media resources to help them absorb course material and understand difficult concepts. NEW! This edition’s MyMathLab course provides additional tools to help with understanding and preparedness. Note: You are purchasing a standalone product; MyLab™ & Mastering™ does not come packaged with this content. Students, if interested in purchasing this title with MyLab & Mastering, ask your instructor for the correct package ISBN and Course ID. Instructors, contact your Pearson representative for more information. If you would like to purchase boththe physical text and MyLab & Mastering, search for: 0134115767 / 9780134115764 * A Survey of Mathematics with Applications plus MyMathLab Student Access Card -- Access Code Card Package Package consists of: 0134112105 / 9780134112107 * A Survey of Mathematics with Applications 0321431308 / 9780321431301 * MyMathLab -- Glue-in Access Card 0321654064 / 9780321654069 * MyMathLab Inside Star Sticker",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780134112183"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0134112180"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 1072,
+        "printType": "BOOK",
+        "categories": [
+          "Mathematics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.8.5.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=iq55CwAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=iq55CwAAQBAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=iq55CwAAQBAJ&dq=isbn%3D9780134092669&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=iq55CwAAQBAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/A_Survey_of_Mathematics_with_Application.html?hl=&id=iq55CwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=iq55CwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Everyday math, everyday language. The Tenth Edition of A Survey of Mathematics with Applications continues the tradition of showing students how we use mathematics in our daily lives and why it’s important, in a clear and accessible way."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "y3z1wm2Nd2IC",
+      "etag": "uj+4uPz7Np0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/y3z1wm2Nd2IC",
+      "volumeInfo": {
+        "title": "Programming in C",
+        "authors": [
+          "Kochan"
+        ],
+        "publisher": "Pearson Education India",
+        "publishedDate": "2005-09",
+        "description": "Programming in C, Third Edition is a revised edition of a classic programming title. Author Stephen Kochan's style and thorough explanations have earned him a place among the most respected of computer book authors. Although the C programming language hasn't undergone any major changes, it's enjoying new life among game programmers and small device programmers, where its simple elegance makes it the ideal choice for small fast programs. Large game developers, such as Nintendo, use C almost exclusively. This edition combines the time-tested instructional style of Stephen Kochan with updated and.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8131713512"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788131713518"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 564,
+        "printType": "BOOK",
+        "averageRating": 4,
+        "ratingsCount": 4,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "3.0.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=y3z1wm2Nd2IC&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=y3z1wm2Nd2IC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=y3z1wm2Nd2IC&dq=isbn%3D9780134092669&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=y3z1wm2Nd2IC&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Programming_in_C.html?hl=&id=y3z1wm2Nd2IC"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=y3z1wm2Nd2IC&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Large game developers, such as Nintendo, use C almost exclusively. This edition combines the time-tested instructional style of Stephen Kochan with updated and."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "EM9HAQAAIAAJ",
+      "etag": "DTnJSt9fu3g",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/EM9HAQAAIAAJ",
+      "volumeInfo": {
+        "title": "Art in Theory 1815-1900",
+        "subtitle": "An Anthology of Changing Ideas",
+        "authors": [
+          "Professor Jason Gaiger"
+        ],
+        "publisher": "Wiley-Blackwell",
+        "publishedDate": "1998-03-16",
+        "description": "Art in Theory 1648-1815 provides a wide-ranging and comprehensive collection of documents on the theory of art from the founding of the French Academy until the end of the Napoleonic Wars.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105022800713"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 1097,
+        "printType": "BOOK",
+        "categories": [
+          "Art"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.9.3.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=EM9HAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=EM9HAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=EM9HAQAAIAAJ&pg=PP1&dq=isbn%3D9780134092669&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=EM9HAQAAIAAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Art_in_Theory_1815_1900.html?hl=&id=EM9HAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=EM9HAQAAIAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "76ZQAAAAMAAJ",
+      "etag": "mBd0ElqrQys",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/76ZQAAAAMAAJ",
+      "volumeInfo": {
+        "title": "C Interfaces and Implementations",
+        "subtitle": "Techniques for Creating Reusable Software",
+        "authors": [
+          "David R. Hanson"
+        ],
+        "publisher": "Addison-Wesley Professional",
+        "publishedDate": "1997",
+        "description": "C Interfaces and Implementations describes how to use interface-based design in the C programming language, and it illustrates this approach by describing 24 interfaces and their implementations in detail. The source code in the book is interleaved with its explanation in an order that best suits understanding the code.",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015038525476"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 519,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.1.0.preview.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=76ZQAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=76ZQAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=76ZQAAAAMAAJ&q=isbn%3D9780134092669&dq=isbn%3D9780134092669&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=76ZQAAAAMAAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/C_Interfaces_and_Implementations.html?hl=&id=76ZQAAAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=76ZQAAAAMAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Shows how to create reusable APIs using interface-based design, a language-independent methodology that separates interfaces from their implementations."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "AF_1PQAACAAJ",
+      "etag": "WMWnQ4u2cMA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/AF_1PQAACAAJ",
+      "volumeInfo": {
+        "title": "Student Activities Manual for Treffpunkt Deutsch",
+        "subtitle": "Grundstufe",
+        "authors": [
+          "E. Rosemarie Widmaier",
+          "Fritz T. Widmaier",
+          "Margaret Gonglewski"
+        ],
+        "publisher": "Prentice Hall",
+        "publishedDate": "2007-07-24",
+        "description": "Each chapter of the workbook section begins with a useful summary of the grammar points presented in the corresponding chapter of the student text. The workbook section features a variety of exercises including sentence-building/sentence-completion exercises, fill-ins, matching exercises and realia-based and picture-cued activities.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0131955810"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780131955813"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 408,
+        "printType": "BOOK",
+        "categories": [
+          "Foreign Language Study"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=AF_1PQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=AF_1PQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=AF_1PQAACAAJ&dq=isbn%3D9780134092669&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=AF_1PQAACAAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Student_Activities_Manual_for_Treffpunkt.html?hl=&id=AF_1PQAACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=AF_1PQAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Each chapter of the workbook section begins with a useful summary of the grammar points presented in the corresponding chapter of the student text."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "SVlDzQEACAAJ",
+      "etag": "J/YW3zoIS/U",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/SVlDzQEACAAJ",
+      "volumeInfo": {
+        "title": "A Concise Introduction to Logic",
+        "authors": [
+          "Patrick J. Hurley"
+        ],
+        "publishedDate": "2008",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0945504152"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780945504153"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 195,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=SVlDzQEACAAJ&dq=isbn%3D9780134092669&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=SVlDzQEACAAJ&dq=isbn%3D9780134092669&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/A_Concise_Introduction_to_Logic.html?hl=&id=SVlDzQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=SVlDzQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ]
+}

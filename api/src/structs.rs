@@ -82,6 +82,8 @@ pub mod google {
         pub page_count: Option<u64>,
         #[serde(rename = "printType")]
         pub print_type: String,
+        #[serde(rename = "imageLinks")]
+        pub image_links: Option<ImageLinks>,
     }
 
     #[derive(Serialize, Deserialize, Clone, Debug)]
@@ -89,5 +91,12 @@ pub mod google {
         #[serde(rename = "type")]
         pub itype: String,
         pub identifier: String,
+    }
+
+    #[derive(Serialize, Deserialize, Clone, Debug)]
+    pub struct ImageLinks {
+        pub thumbnail: String,
+        #[serde(rename = "smallThumbnail")]
+        pub small_thumbnail: String,
     }
 }
