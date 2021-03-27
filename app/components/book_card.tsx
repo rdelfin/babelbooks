@@ -28,6 +28,6 @@ const BookCard: React.FC<Props> = (props) => {
             </Card.Actions>
         </Card>
     );
-}
+};
 
 export default BookCard;
