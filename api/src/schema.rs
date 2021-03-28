@@ -34,9 +34,4 @@ joinable!(owned_books -> book (isbn));
 joinable!(owned_books -> user (user_id));
 joinable!(user_sessions -> user (user_id));
 
-allow_tables_to_appear_in_same_query!(
-    book,
-    owned_books,
-    user,
-    user_sessions,
-);
+allow_tables_to_appear_in_same_query!(book, owned_books, user, user_sessions,);

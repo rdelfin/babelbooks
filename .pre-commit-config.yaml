@@ -15,3 +15,18 @@ repos:
         args: ["--config ./.prettierrc"]
         files: ^app/
         types_or: [javascript, jsx, ts, tsx]
+-   repo: https://github.com/doublify/pre-commit-rust
+    rev: v1.0
+    hooks:
+    -   id: fmt
+        args: ["--verbose", "--manifest-path", "api/Cargo.toml", "--"]
+        files: ^api/
+        types_or: [rust]
+    -   id: cargo-check
+        args: ["--manifest-path", "api/Cargo.toml", "--"]
+        files: ^api/
+        types_or: [rust]
+    -   id: clippy
+        args: ["--manifest-path", "api/Cargo.toml", "--"]
+        files: ^api/
+        types_or: [rust]
