@@ -11,9 +11,14 @@ export interface Props {
     thumbnail_url: string;
 }
 
+const card_style = {
+    marginTop: 20,
+    marginBottom: 20,
+};
+
 const BookCard: React.FC<Props> = (props) => {
     return (
-        <Card elevation={10}>
+        <Card elevation={10} style={card_style}>
             <Card.Cover source={{ uri: props.thumbnail_url }} />
             <Card.Title
                 title={props.title}

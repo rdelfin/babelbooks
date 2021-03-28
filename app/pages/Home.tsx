@@ -5,7 +5,21 @@
 import { Appbar } from "react-native-paper";
 import React from "react";
 import BookCard from "../components/book_card";
-import { View } from "react-native";
+import {
+    StyleSheet,
+    View,
+    ScrollView,
+} from "react-native";
+
+const styles = StyleSheet.create({
+    scrollView: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 20,
+        paddingBottom: 0,
+        marginBottom: 100,
+    },
+});
 
 export default function Home() {
     return (
@@ -24,11 +38,18 @@ export default function Home() {
                     onPress={() => console.log("Pressed dots vertical")}
                 />
             </Appbar.Header>
-            <BookCard
-                title="Jurassic Park"
-                authors={["Michael Crichton"]}
-                thumbnail_url="http://books.google.com/books/content?id=DYfxuAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
-            />
+                <ScrollView style={styles.scrollView}>
+                    <BookCard
+                        title="Jurassic Park"
+                        authors={["Michael Crichton"]}
+                        thumbnail_url="http://books.google.com/books/content?id=DYfxuAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
+                    />
+                    <BookCard
+                        title="Jurassic Park"
+                        authors={["Michael Crichton"]}
+                        thumbnail_url="http://books.google.com/books/content?id=DYfxuAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api"
+                    />
+                </ScrollView>
         </View>
     );
 }
